@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function Header() {
     return (
-        <header>
+        <header className = "header">
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/listings">Listings</Link>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/create">Create a Listing</NavLink>
             </nav>
         </header>
     )

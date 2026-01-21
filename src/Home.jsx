@@ -1,7 +1,7 @@
 import Card from "./components/Card";
 import Testing from "./components/Testing";
 
-const Crd = Card(Testing);
+
 function Home() {
     return (
         <div className='content'>
@@ -11,7 +11,9 @@ function Home() {
             <p>paragraph spacing</p>
             <p>remembering how this works</p>
 
-            <Card>Testing</Card>
+            <Card>
+                <Testing />
+            </Card>
 
             <h1>Header 1</h1>
             <h2>Header 2</h2>

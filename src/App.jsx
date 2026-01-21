@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
+import CreateListing from "./CreateListing";
 import Header from "./components/Header";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
             <Header/>
             <Routes>
                 <Route path="/" Component={Home} />
+                <Route path="/create" Component={CreateListing}/>
             </Routes>
         </BrowserRouter>
     );
