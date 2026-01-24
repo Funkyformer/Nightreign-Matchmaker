@@ -7,10 +7,10 @@ function Hider(props) {
 
     return (
         <div className = {styles.hider}>
+            <button type = 'button' onClick = {() => setHidden(!hidden)}>Click me to toggle</button>
             <div hidden = {hidden}>
                 {props.children}
             </div>
-            <button type = 'button' onClick = {() => setHidden(!hidden)}>Click me to toggle</button>
         </div>
     )
 }

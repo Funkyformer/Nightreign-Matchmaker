@@ -1,0 +1,11 @@
+.bosses {
+    display:inline-block;
+    width:45%;
+    list-style-type:none;
+    margin:0;
+    padding:5px;
+    vertical-align: top;
+}
+.hider {
+    
+}

@@ -1,0 +1,14 @@
+{
+    "bosses":[
+        {"id":0, "title":"Tricephalos","dark":true,"name":"Gladius, Beast of Night"},
+        {"id":1, "title":"Gaping Jaw","dark":true,"name":"Adel, Baron of Night"},
+        {"id":2, "title":"Sentient Pest","dark":true,"name":"Gnoster, Wisdom of Night"},
+        {"id":3, "title":"Augur","dark":true,"name":"Maris, Fathom of Night"},
+        {"id":4, "title":"Equilibrious Beast","dark":true,"name":"Libra, Creature of Night"},
+        {"id":5, "title":"Darkdrift Knight","dark":true,"name":"Fulghor, Champion of Nightglow"},
+        {"id":6, "title":"Fissure in the Fog","dark":true,"name":"Caligo, Miasma of Night"},
+        {"id":7, "title":"Night Aspect","dark":false,"name":"Heolster, The Nightlord"},
+        {"id":8, "title":"Balancers","dark":true,"name":"Weapon-Bequeathed Harmonia"},
+        {"id":9, "title":"Dreglord","dark":false,"name":"Traitorous Straghess"}
+    ]
+}
