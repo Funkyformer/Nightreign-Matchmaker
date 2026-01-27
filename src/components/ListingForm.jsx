@@ -4,14 +4,21 @@ import bossList from './bosses.json'
 import styles from './CSS Modules/ListingForm.module.css'
 
 function ListingForm() {
-
-    const [inputs, setInputs] = useState({});
+    
     const bosses = bossList.bosses;
-    const handleChange = (e) => {
-        const target = e.target;
+    const regBosses = bosses.map(boss => [`reg${boss.id}`, false]);
+    const darkBosses = bosses.map(boss => {
+        if (boss.dark == true) {
+            return [`dark${boss.id}`, false];
+        }})
+        .filter(function(element) {
+            return element !== undefined;
+        });
+    const allBosses = Object.fromEntries([...regBosses, ...darkBosses]);
+    const [inputs, setInputs] = useState(allBosses);
+    const handleCheck = (e) => {
         const name = e.target.name;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        setInputs(values => ({...values, [name]: value}))
+        setInputs(values => ({...values, [name]: !values[name]}))
     }
 
     return (
@@ -21,7 +28,7 @@ function ListingForm() {
                     {bosses.map(boss =>
                         <li key={'reg'+boss.id}>
                             <label>
-                                <input type='checkbox' name={`reg${boss.id}`} checked={`inputs.reg${boss.id}`} onChange = {handleChange} />
+                                <input type='checkbox' name={`reg${boss.id}`} checked={inputs[`reg${boss.id}`]} onChange = {handleCheck} />
                                 {` ${boss.name}`}
                             </label>
                         </li>
@@ -33,7 +40,7 @@ function ListingForm() {
                         {if(boss.dark == true) {
                             return <li key={'dark'+boss.id}>
                                 <label>
-                                    <input type='checkbox' name={`dark${boss.id}`} checked={`inputs.dark${boss.id}`} onChange = {handleChange} />
+                                    <input type='checkbox' name={`dark${boss.id}`} checked={inputs[`dark${boss.id}`]} onChange = {handleCheck} />
                                     {` Everdark ${boss.name}`}
                                 </label>
                             </li>
