@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "settings.cors_origin",
+  "type": "java.lang.String",
+  "description": "The origin to use for CORS"
+}]}

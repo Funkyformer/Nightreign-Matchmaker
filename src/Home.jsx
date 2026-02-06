@@ -1,5 +1,6 @@
 import Card from "./components/Card";
 import Testing from "./components/Testing";
+import Viewer from "./components/ListingsViewer";
 
 
 function Home() {
@@ -87,7 +88,8 @@ function Home() {
                 <dd>- black hot drink</dd>
                 <dt>Milk</dt>
                 <dd>- white cold drink</dd>
-            </dl> 
+            </dl>
+            <Viewer />
         </div>
     )
 }
