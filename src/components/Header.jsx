@@ -5,6 +5,7 @@ function Header() {
             <nav>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/create">Create a Listing</NavLink>
+                <NavLink to="/view">View Listings</NavLink>
             </nav>
         </header>
     )

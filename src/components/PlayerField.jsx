@@ -1,6 +1,6 @@
 import playerList from './json files/nightfarers.json'
 
-function Player(props) {
+function PlayerField(props) {
     const nightfarers = playerList.nightfarers;
 
     return (
@@ -21,4 +21,4 @@ function Player(props) {
     )
 }
 
-export default Player
+export default PlayerField

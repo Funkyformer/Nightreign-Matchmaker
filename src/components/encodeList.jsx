@@ -11,7 +11,6 @@ function encodeList(props, length) {
     }
 
     const procChars = (chars) => {
-        console.log(chars);
         if (chars != null) {
             let toRet = "";
             Object.keys(chars).forEach((element) =>

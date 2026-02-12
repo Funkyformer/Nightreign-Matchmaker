@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Hider from './Hider';
 import bossList from './json files/bosses.json'
 import styles from './CSS Modules/ListingForm.module.css'
-import Player from './Player';
+import Player from './PlayerField';
 import encodeList from './encodeList';
 import playerList from './json files/nightfarers.json'
 
@@ -78,7 +78,7 @@ function ListingForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const payload = encodeList(inputs, bosses.length)
-        console.log(payload)
+        // console.log(payload)
         axios.post('/add', payload)
         .then((response) => console.log(response))
         .catch((e) => console.log(e));

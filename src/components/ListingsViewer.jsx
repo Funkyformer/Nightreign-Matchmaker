@@ -1,6 +1,7 @@
 import axios from "axios";
 import decodeList from "./decodeList";
 import { useState, useEffect } from 'react';
+import Listing from "./Listing";
 function ListingsViewer() {
 
     const [list, setList] = useState([]);
@@ -9,6 +10,7 @@ function ListingsViewer() {
         const getListings = async () => {
             await axios.get('/all')
             .then(res => {
+                console.log(res);
                 setList(res.data.map(listing => decodeList(listing)));
             })
             .catch(err => console.log(err));
@@ -22,11 +24,7 @@ function ListingsViewer() {
 
     return (
         <div>
-            <ul>
-                { list.map(listing =>
-                    <li key={listing.listingID}>{listing.listingID}</li>
-                )}
-            </ul>
+            {list.map(listing => <Listing key={listing.listingID}props={listing}/>)}
             <input type="button" onClick={handleClick} value="print listings"/>
         </div>
     )

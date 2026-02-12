@@ -1,6 +1,8 @@
+import styles from './CSS Modules/Card.module.css';
+
 function Card(props) {
     return(
-        <div className = 'card'>
+        <div className = {styles.card}>
             {props.children}
         </div>
     );

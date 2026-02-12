@@ -9,13 +9,8 @@ function decodeList(props) {
                 let curNum = parseInt(bosses.charAt(i))
                 let dark = curNum >= 2;
                 let reg = curNum % 2 == 1;
-                if (i < 10) {
-                    toRet[`reg0${i}`] = reg;
-                    toRet[`dark0${i}`] = dark;
-                } else {
-                    toRet[`reg${i}`] = reg;
-                    toRet[`dark${i}`] = dark;
-                }
+                toRet[`reg${i}`] = reg;
+                toRet[`dark${i}`] = dark;
             }
             return toRet;
         }
@@ -25,11 +20,7 @@ function decodeList(props) {
         if (chars == null) return null;
         const toRet = {};
         for (let i = 0; i < chars.length; i++) {
-            if (i < 10) {
-                toRet[`char0${i}`] = chars.charAt(i) != '0';
-            } else {
-                toRet[`char${i}`] = chars.charAt(i) != '0';
-            }
+            toRet[`char${i}`] = chars.charAt(i) != '0';
         }
         return toRet;
     }

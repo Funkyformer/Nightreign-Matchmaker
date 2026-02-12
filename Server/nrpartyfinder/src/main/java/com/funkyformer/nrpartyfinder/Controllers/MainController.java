@@ -17,6 +17,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = {"${settings.cors_origin}","${settings.cors_origin_2}"})
 @RequestMapping("/nrpartyfinder")
 public class MainController {
     private final ListingRepository repository;
@@ -25,7 +26,6 @@ public class MainController {
         this.repository = repository;
     }
     
-    @CrossOrigin(origins = {"${settings.cors_origin}"})
     @PostMapping("/add")
     public Listing createListing(@Valid @RequestBody Listing listing) {
         // System.out.println(listing.toString());
@@ -34,7 +34,6 @@ public class MainController {
         return ret;
     }
     
-    @CrossOrigin(origins = {"${settings.cors_origin}"})
     @GetMapping("/all")
     public List<Listing> getAllEmployees() {
         return repository.findAll();

@@ -1,5 +1,12 @@
-{"properties": [{
-  "name": "settings.cors_origin",
-  "type": "java.lang.String",
-  "description": "The origin to use for CORS"
-}]}
+{"properties": [
+  {
+    "name": "settings.cors_origin",
+    "type": "java.lang.String",
+    "description": "The origin to use for CORS"
+  },
+  {
+    "name": "settings.cors_origin_2",
+    "type": "java.lang.String",
+    "description": "A second origin for CORS usage"
+  }
+]}
