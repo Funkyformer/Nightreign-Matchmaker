@@ -1,0 +1,7 @@
+.listingsHolder {
+    max-height: 80vh;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: row wrap;
+    background-color:rgb(38, 31, 43);
+}

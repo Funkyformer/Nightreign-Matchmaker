@@ -1,10 +1,10 @@
-function PlayerViewer({character}) {
+function PlayerViewer({character, className}) {
     const isNull = character == null;
     return (
-        <div>
+        <div className = {className}>
             { isNull ? 
                 ('no char selected'):
-                (Object.keys(character).map(char => <div key={char}>{char}</div>))
+                (Object.entries(character).map(([char, val]) => {if (val) return <img key={char} src={`/images/nightfarers/${char}.webp`} alt = {char}/>}))
             }
         </div>
     )
