@@ -9,7 +9,7 @@ function ListingsViewer() {
 
     useEffect(() => {
         const getListings = async () => {
-            await axios.get('/all')
+            await axios.get('/listings')
             .then(res => {
                 console.log(res);
                 setList(res.data.map(listing => decodeList(listing)));

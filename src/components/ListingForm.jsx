@@ -22,7 +22,7 @@ function ListingForm() {
 
     const [inputs, setInputs] = useState({
         targets: {...allBosses},
-        platform: 'steam',
+        platform: 0,
         username: '',
         dlc: false,
         description: '',
@@ -89,9 +89,9 @@ function ListingForm() {
             <input type='button' onClick = {logit} value='print inputs' />
             <label>Choose your Platform:</label>
             <select name="platform" onChange = {handleOther}>
-                <option value="steam">Steam</option>
-                <option value="xbox">Xbox</option>
-                <option value="ps">Playstation</option>
+                <option value={0}>Steam</option>
+                <option value={1}>Xbox</option>
+                <option value={2}>Playstation</option>
             </select> <br/>
             <input type='button' onClick = {toggleDepth} value={inputs.depth ? 'Return to individual bosses' : 'Switch to Depth of Night'} />
             { inputs.depth? <h1>DEPTH OF NIGHT ACTIVE</h1> :

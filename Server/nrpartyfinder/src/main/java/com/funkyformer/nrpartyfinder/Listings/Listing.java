@@ -1,4 +1,4 @@
-package com.funkyformer.nrpartyfinder.Entities;
+package com.funkyformer.nrpartyfinder.Listings;
 
 import java.time.ZonedDateTime;
 import java.util.UUID;
@@ -29,7 +29,7 @@ public class Listing {
 
     @Column
     @NotNull
-    private String platform;
+    private int platform;
 
     @Column
     @NotNull
@@ -154,12 +154,11 @@ public class Listing {
         this.char03 = char03;
     }
 
-    public String getPlatform() {
+    public Integer getPlatform() {
         return platform;
     }
 
-
-    public void setPlatform(String platform) {
+    public void setPlatform(Integer platform) {
         this.platform = platform;
     }
 
