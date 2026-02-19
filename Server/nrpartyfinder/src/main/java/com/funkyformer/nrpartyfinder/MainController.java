@@ -1,14 +1,15 @@
 package com.funkyformer.nrpartyfinder;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.funkyformer.nrpartyfinder.Listings.*;
 
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 
@@ -35,7 +36,20 @@ public class MainController {
     }
     
     @GetMapping("/listings")
-    public List<Listing> getAllEmployees() {
-        return repository.findAll();
+    public List<Listing> getAllEmployees(
+        @RequestParam(required=false) Integer platform,
+        @RequestParam(required=false) Boolean requiredlc) {
+
+        Specification<Listing> spec = Specification.unrestricted();
+
+        if (platform != null) {
+            spec = spec.and(ListingSpecification.isPlat(platform));
+        }
+
+        if (requiredlc != null) {
+            spec = spec.and(ListingSpecification.reqDLC(requiredlc));
+        }
+
+        return repository.findAll(spec);
     }  
 }
